@@ -4,6 +4,13 @@
   },
   "scripts": {
     "server": "json-server db.json --watch --port 5002",
-    "server2": "json-server db.json --routes routes.json --watch --port 5002"
+    "server2": "nodemon --watch mock --port 5002 --exec 'json-server ./mock/_db.js'",
+    "server2_old": "json-server db.json --routes routes.json --watch --port 5002",
+    "mock": "nodemon --watch mock --port 5002 --exec 'json-server ./mock/_db.js'",
+    "mock-data": "json-server  --watch mock-data/users/* --port 5002"
+  },
+  "dependencies": {
+    "glob": "^10.2.2",
+    "nodemon": "^2.0.22"
   }
 }
