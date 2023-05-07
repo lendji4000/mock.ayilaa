@@ -1,17 +1,27 @@
 // _db.js
 
 const users = require("./users/users");
-const query = require("./documents/query");
-const posts = require("./blog/posts");
-const comments = require("./blog/comments");
-const profile = require("./blog/profile");
+const attractions = require("./attractions/attractions");
+const attractionsCategories = require("./attractions/attractionsCategories");
+const countries = require("./attractions/countries");
+const favorites = require("./attractions/favorites");
+const locations = require("./attractions/locations");
+const locationsCategories = require("./attractions/locationsCategories");
+const reviews = require("./attractions/reviews");
+const visits = require("./attractions/visits");
+const categories = require("./categories/categories");
 const subcomments = require("./blog/subblog/subcomments");
 module.exports = () => ({
     users,
-    query,
-    posts,
-    comments,
-    profile,
+    attractions,
+    attractionsCategories,
+    countries,
+    favorites,
+    locations,
+    locationsCategories,
+    reviews,
+    visits,
+    categories,
     subcomments
 });
 
