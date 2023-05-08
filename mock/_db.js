@@ -10,7 +10,7 @@ const locationsCategories = require("./attractions/locationsCategories");
 const reviews = require("./attractions/reviews");
 const visits = require("./attractions/visits");
 const categories = require("./categories/categories");
-const subcomments = require("./blog/subblog/subcomments");
+const adresses = require("./adresses/adresses");
 module.exports = () => ({
     users,
     attractions,
@@ -22,7 +22,7 @@ module.exports = () => ({
     reviews,
     visits,
     categories,
-    subcomments
+    adresses
 });
 
 /**
