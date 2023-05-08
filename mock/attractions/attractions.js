@@ -15,7 +15,7 @@ module.exports=[
         }
     },
     {
-        id: 1,
+        id: 2,
         name: "Spa + Bain Chauffant + Piscine",
         description: "",
         images: [],
@@ -28,7 +28,7 @@ module.exports=[
         }
     },
     {
-        id: 1,
+        id: 3,
         name: "Safari",
         description: "",
         images: [],
@@ -41,7 +41,7 @@ module.exports=[
         }
     },
     {
-        id: 1,
+        id: 4,
         name: "Dinée au pieds des chutes",
         description: "",
         images: [],
@@ -54,10 +54,40 @@ module.exports=[
         }
     },
     {
-        id: 1,
+        id: 5,
         name: "Casino du Mall",
         description: "",
         images: [],
+        location : {
+            id: 5,
+            name: "Grand Mall",
+            description: "",
+            images: [],
+            country : {}
+        }
+    },
+    {
+        id: 6,
+        name: "Maison H",
+        rate: 4.5, //Classement du coin selon Ayilaa ( Note sur 5),
+        logo:"", //Logo de l'enseigne
+        description: "",
+        images: [],
+        categories: [],
+        email: "",
+        phone1: "",
+        phone2 :"",
+        adresse: {},
+        openedDays:[],
+        openedHours:[],
+        owner:{}, // User
+        documents: {}, //Documents du coin (registre du commerce , etc ...
+        services: [], //Services , produits offers
+        paymentsOptions:[], //Moyens de paiements (OM, MOMO,Carte Visa, etc ...)
+        whereToPay: ["Ayilaa","attraction"],
+        paymentMode: ["partial","total"],
+        annulation: "",
+        remboursement:"",
         location : {
             id: 5,
             name: "Grand Mall",
