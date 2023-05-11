@@ -8,4 +8,18 @@ module.exports=[
         description: "",
         price:"",
     },
-    ]
+    {
+        id: 2,
+        attraction: {},
+        name : "",
+        description: "",
+        price:"",
+    },
+    {
+        id: 3,
+        attraction: {},
+        name : "",
+        description: "",
+        price:"",
+    },
+]

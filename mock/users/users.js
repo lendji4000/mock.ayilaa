@@ -1,8 +1,9 @@
 
 const hoaxer = require('hoaxer')
+const addresses = require("../adresses/adresses");
 function generateUsers () {
     const users = []
-    for (let id = 1; id <= 50; id+=1) {
+    for (let id = 1; id <= 500; id+=1) {
         const firstName = hoaxer.name.firstName()
         const lastName = hoaxer.name.lastName()
         const email = hoaxer.internet.email()
@@ -17,10 +18,11 @@ function generateUsers () {
         const endDate = new Date('2003-12-31');
         const randomBirthDate = hoaxer.date.between(startDate, endDate);
 
-        console.log(randomBirthDate.toLocaleDateString()); // affiche la date de naissance aléatoire sous forme de chaîne de caractères dans le format "mm/jj/aaaa"
-
+        //console.log(randomBirthDate.toLocaleDateString()); // affiche la date de naissance aléatoire sous forme de chaîne de caractères dans le format "mm/jj/aaaa"
+        //hoaxer.locale="fr_CM";
+        //console.log(hoaxer.address)
         const date_of_birth=randomBirthDate.toLocaleDateString();
-        const adresse={};
+        const adresseId=hoaxer.random.arrayElement(addresses).id;
         const role= {};
         const verifieds = [true ,false ];
         const verified = hoaxer.random.arrayElement(verifieds);
@@ -28,6 +30,7 @@ function generateUsers () {
         const actives = [true ,false ];
         const active = hoaxer.random.arrayElement(actives);
         const activated_at="";
+        const current_gps_location="";
         const password =hoaxer.internet.password(12);
         const countries = ['Cameroon', 'Gabon', 'Congo', 'Senegal', 'Côte d\'Ivoire', 'Guinée Equatoriale'];
         const country = hoaxer.random.arrayElement(countries); // sélectionne un genre aléatoire dans le tableau "Countries"
@@ -40,18 +43,17 @@ function generateUsers () {
             phone2: phone2,
             gender: gender,
             date_of_birth: date_of_birth,
-            adresse: adresse,
+            adresseId: adresseId,
             role: role,
             verified: verified,
             verified_at: verified_at,
             active: active,
             activated_at: activated_at,
             password: password,
-            country: country
+            current_gps_location:current_gps_location,
         })
     }
-    //console.log(employees);
-    return { users: users }
+    return users
 }
 //generateUsers()
 module.exports = generateUsers()

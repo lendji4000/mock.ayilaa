@@ -3,6 +3,8 @@
 const users = require("./users/users");
 const attractions = require("./attractions/attractions");
 const attractionsCategories = require("./attractions/attractionsCategories");
+const attractionsProducts = require("./attractions/attractionProducts");
+const attractionsBookings = require("./attractions/attractionBooking");
 const countries = require("./attractions/countries");
 const favorites = require("./attractions/favorites");
 const locations = require("./attractions/locations");
@@ -15,6 +17,8 @@ module.exports = () => ({
     users,
     attractions,
     attractionsCategories,
+    attractionsBookings,
+    attractionsProducts,
     countries,
     favorites,
     locations,

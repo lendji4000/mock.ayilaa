@@ -77,17 +77,22 @@ module.exports=[
         email: "",
         phone1: "",
         phone2 :"",
+        whatsapp_number:"",
         adresse: {},
         openedDays:[],
         openedHours:[],
         owner:{}, // User
         documents: {}, //Documents du coin (registre du commerce , etc ...
-        services: [], //Services , produits offers
+        services: [], //Services
+        products: [], //Produits
         paymentsOptions:[], //Moyens de paiements (OM, MOMO,Carte Visa, etc ...)
         whereToPay: ["Ayilaa","attraction"],
         paymentMode: ["partial","total"],
         annulation: "",
         remboursement:"",
+        is_certify : false ,
+        certification_start_date: "2023-05-01",
+        certification_end_date: "2024-05-01",
         location : {
             id: 5,
             name: "Grand Mall",
