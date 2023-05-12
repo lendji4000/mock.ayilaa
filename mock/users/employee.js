@@ -1,8 +1,8 @@
 
 const hoaxer = require('hoaxer')
 const addresses = require("../adresses/adresses");
-function generateUsers () {
-    const users = []
+function generateEmployees () {
+    const employees = []
     for (let id = 1; id <= 500; id+=1) {
         const firstName = hoaxer.name.firstName()
         const lastName = hoaxer.name.lastName()
@@ -32,10 +32,10 @@ function generateUsers () {
         const current_gps_location="";
         const password =hoaxer.internet.password(12);
         const countries = ['Cameroon', 'Gabon', 'Congo', 'Senegal', 'Côte d\'Ivoire', 'Guinée Equatoriale'];
-        const roles = ['Super Admin', 'Global Admin', 'Country Admin','Region Admin', 'Partner'];
+        const roles = ['Global Admin', 'Country Admin', 'Partner'];
         const country = hoaxer.random.arrayElement(countries); // sélectionne un genre aléatoire dans le tableau "Countries"
         const role=hoaxer.random.arrayElement(roles);
-        users.push({
+        employees.push({
             id: id,
             first_name: firstName,
             last_name: lastName,
@@ -54,10 +54,9 @@ function generateUsers () {
             current_gps_location:current_gps_location,
         })
     }
-    return users
+    return employees
 }
-//generateUsers()
-module.exports = generateUsers()
+module.exports = generateEmployees()
 
 
 

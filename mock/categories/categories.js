@@ -1,8 +1,41 @@
 // Catégories d'attractions touristiques
+const catLevel1=['Hôtel','Centre climatique','Meublé','Auberge','Site touristique avec logement','Maison d\'hôte','Autres']
+const catLevel2=['Restaurant','Restaurant d’hôtel','Snack','Lounge','Fast food','Restaurant livreur','Cuisine à la commande domicile','Traiteur','Autres Dans Restauration']
+const catLevel3=['Manège','Cinéma','Théâtre','Boîte de nuit','Salle de concert','Plage','Parc d’attraction','Snack','Centre Commercial','Stade','Match','Compétition','Marché','SuperMarché','Autres Divertissements']
+const catLevel4=['Aéroport','Gare Routière','Gare Ferrovière','Port','Agence de voyage Aérien','Agence de voyage Maritime','Agence de train','Agence de transport terrestre','Agence de taxi','Agence de Moto','Agence de location de véhicule','Agence de transport touriste']
+const catLevel5=['Zoo','Parc','Monument','Habitat Historique','Construction historique','Musée','Chefferie','Royaume','Chute','Mont','Autres Sites Touristiques']
+const catLevel6=['Office de tourisme Régional','Office de tourisme communal','Office de tourisme de Ville','Route des Chefferie','Autres Offices']
+const catLevel7=['Urgences','Pompier','Hôpital','Centre de santé','Police','Gendarmerie','Autres Secours']
+const catLevel8=['Ministères','Délégation Régionale','Délégation Départementale','Délégation Communale','Mairie','Services','Université','Institut','Etablissement scolaire','Autres Administrations']
+const catRoots=[
+    {name:'Hôtels et hébergements',children:catLevel1},
+    {name:'Restauration',children:catLevel2},
+    {name:'Divertissements',children:catLevel3},
+    {name:'Transport',children:catLevel4},
+    {name:'Site touristique',children:catLevel5},
+    {name:'Office de tourisme',children:catLevel6},
+    {name:'Secours',children:catLevel7},
+    {name:'Administration',children:catLevel8}
+    ];
+
+function generateCategories () {
+    const categories = []
+    let increment=1;
+    catRoots.forEach((catRoot)=>{
+        const cat={};
+        cat.name=catRoot.name;
+        cat.description="";
+        cat.additionnalData="";
+        cat.slug= sluggify(name);
+        cat.parentId="";
+    })
+}
 module.exports=[
     {
         id: 1,
         name: "Restauration",
+        description:'',
+        additionnalData:{},
         slug: "",
         parent: "",
     },
@@ -122,3 +155,11 @@ module.exports=[
     },
 ]
 
+function sluggify(str) {
+    return str
+        .toLowerCase() // Convert to lowercase
+        .trim() // Remove leading and trailing whitespace
+        .replace(/[^\w\s-]/g, '') // Remove non-word characters except spaces and hyphens
+        .replace(/\s+/g, '-') // Replace spaces with hyphens
+        .replace(/--+/g, '-'); // Replace multiple consecutive hyphens with a single hyphen
+}

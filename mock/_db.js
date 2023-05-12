@@ -1,6 +1,7 @@
 // _db.js
 
 const users = require("./users/users");
+const employees = require("./users/employee");
 const attractions = require("./attractions/attractions");
 const attractionsCategories = require("./attractions/attractionsCategories");
 const attractionsProducts = require("./attractions/attractionProducts");
@@ -15,6 +16,7 @@ const categories = require("./categories/categories");
 const adresses = require("./adresses/adresses");
 module.exports = () => ({
     users,
+    employees,
     attractions,
     attractionsCategories,
     attractionsBookings,
