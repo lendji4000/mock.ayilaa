@@ -6,35 +6,35 @@ module.exports=[
         name: "Valee de Bana",
         description: "",
         images: [],
-        country :{}
+        adresse :{}
     },
     {
         id: 2,
         name: "Tagidor",
         description: "",
         images: [],
-        country : {}
+        adresse : {}
     },
     {
         id: 3,
         name: "Parc de Waza",
         description: "",
         images: [],
-        country : {}
+        adresse : {}
     },
     {
         id: 4,
         name: "Chute de Fongo-tongo",
         description: "",
         images: [],
-        country : {}
+        adresse : {}
     },
     {
         id: 5,
         name: "Grand Mall",
         description: "",
         images: [],
-        country : {}
+        adresse : {}
     },
 ]
 

@@ -4,6 +4,5 @@
   "/posts/:id": "/posts/:id",
   "/posts/:category": "/posts?category=:category",
   "/articles?id=:id": "/posts/:id",
-  "/subcomments?id=:id": "/subcomments/:id",
-  "/users?id=:id": "/users/:id"
+  "/subcomments?id=:id": "/subcomments/:id"
 }
