@@ -14,6 +14,8 @@ const reviews = require("./attractions/reviews");
 const visits = require("./attractions/visits");
 const categories = require("./categories/categories");
 const adresses = require("./adresses/adresses");
+const subscriptionPlans = require("./subscriptions/subscriptionPlan");
+const subscriptions = require("./subscriptions/subscription");
 module.exports = () => ({
     users,
     employees,
@@ -28,7 +30,9 @@ module.exports = () => ({
     reviews,
     visits,
     categories,
-    adresses
+    adresses,
+    subscriptionPlans,
+    subscriptions
 });
 
 /**

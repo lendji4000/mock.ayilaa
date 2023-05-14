@@ -6,6 +6,7 @@ const products = require("../attractions/attractionProducts");
 const services = require("../attractions/locations");
 const categories = require("../categories/categories")
 const users = require("../users/users")
+const { generateRandomWord, generateRandomImageLinks, getRandomSubarray } = require('../globalFunctions');
 
 const hoaxer = require('hoaxer');
 function generateAttractions () {
@@ -38,7 +39,7 @@ function generateAttractions () {
         const description = hoaxer.lorem.text()
         const additionnalData = {}
         const images = generateRandomImageLinks(5)
-        const categories = randomCategories
+        const categoriesTabs = randomCategories
         const email = hoaxer.internet.email()
         const phone1=hoaxer.phone.phoneNumberFormat(1, '{{countryCode}}-###-###-####', 'CM');
         const phone2=hoaxer.phone.phoneNumberFormat(1, '{{countryCode}}-###-###-####', 'CM');
@@ -67,7 +68,7 @@ function generateAttractions () {
             description:description,
             additionnalData:additionnalData,
             images:images,
-            categories:categories,
+            categories:categoriesTabs,
             email:email,
             phone1: phone1,
             phone2 :phone2,
@@ -95,43 +96,5 @@ function generateAttractions () {
 }
 
 module.exports = generateAttractions()
-
-
-function generateRandomWord(length) {
-    let word = hoaxer.lorem.word();
-    while (word.length !== length) {
-        word = hoaxer.lorem.word();
-    }
-    return word;
-}
-
-function generateRandomImageLinks(count) {
-const imageLinks = [];
-for (let i = 0; i < count; i++) {
-    const imageLink = hoaxer.image.imageUrl();
-    imageLinks.push(imageLink);
-}
-return imageLinks;
-}
-
-function getRandomSubarray(array, size) {
-    const shuffled = array.slice();
-    let currentIndex = shuffled.length;
-    let temporaryValue;
-    let randomIndex;
-
-    while (currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-
-        temporaryValue = shuffled[currentIndex];
-        shuffled[currentIndex] = shuffled[randomIndex];
-        shuffled[randomIndex] = temporaryValue;
-    }
-
-    return shuffled.slice(0, size);
-}
-
-
 
 
