@@ -10,7 +10,9 @@ function generateServices () {
         const name = generateRandomWord(6);
         const attractionId = hoaxer.datatype.number({ min: 1, max: 499 });
         const description = hoaxer.lorem.text();
-        const additionnalDatas={};
+        const additionnalDatas={
+
+        };
         const images = generateRandomImageLinks(5);
         services.push({
             id: id,

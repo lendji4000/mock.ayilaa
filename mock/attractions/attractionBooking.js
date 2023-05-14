@@ -18,6 +18,7 @@ module.exports=[
         attraction : {},
         service: {},
         product: {},
+        additionnalDatas: {},
         booking_date: "",
         booking_status: ""
     },
