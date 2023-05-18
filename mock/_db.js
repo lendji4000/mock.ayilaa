@@ -4,35 +4,41 @@ const users = require("./users/users");
 const employees = require("./users/employee");
 const attractions = require("./attractions/attractions");
 const attractionsCategories = require("./attractions/attractionsCategories");
+const attractionsServices = require("./attractions/attractionServices");
 const attractionsProducts = require("./attractions/attractionProducts");
 const attractionsBookings = require("./attractions/attractionBooking");
-const countries = require("./attractions/countries");
+ const countries = require("./attractions/countries");
 const favorites = require("./attractions/favorites");
 const locations = require("./attractions/locations");
 const locationsCategories = require("./attractions/locationsCategories");
 const reviews = require("./attractions/reviews");
 const visits = require("./attractions/visits");
 const categories = require("./categories/categories");
-const adresses = require("./adresses/adresses");
+ const adresses = require("./adresses/adresses");
 const subscriptionPlans = require("./subscriptions/subscriptionPlan");
 const subscriptions = require("./subscriptions/subscription");
+const discounts = require("./giftAndDiscounts/discount");
+const gifts = require("./giftAndDiscounts/gift");
 module.exports = () => ({
-    users,
-    employees,
-    attractions,
-    attractionsCategories,
+    adresses,
     attractionsBookings,
     attractionsProducts,
-    countries,
+    attractions,
+    attractionsCategories,
+    attractionsServices,
+     countries,
     favorites,
     locations,
     locationsCategories,
     reviews,
     visits,
     categories,
-    adresses,
+    discounts,
+    gifts,
+    subscriptions,
     subscriptionPlans,
-    subscriptions
+    employees,
+    users,
 });
 
 /**

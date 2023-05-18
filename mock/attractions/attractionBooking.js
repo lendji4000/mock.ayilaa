@@ -20,7 +20,7 @@ module.exports=[
         product: {},
         additionnalDatas: {},
         booking_date: "",
-        booking_status: ""
+        booking_status: "",
     },
     {
         id: 2,
