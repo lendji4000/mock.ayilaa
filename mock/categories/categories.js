@@ -1,3 +1,4 @@
+const hoaxer = require('hoaxer')
 // Catégories d'attractions touristiques
 const catLevel1=['Hôtel','Centre climatique','Meublé','Auberge','Site touristique avec logement','Maison d\'hôte','Autres']
 const catLevel2=['Restaurant','Restaurant d’hôtel','Snack','Lounge','Fast food','Restaurant livreur','Cuisine à la commande domicile','Traiteur','Autres Dans Restauration']
@@ -27,7 +28,7 @@ function generateCategories () {
         cat.name=catRoot.name;
         cat.description=hoaxer.lorem.text();;
         cat.additionnalData={};
-        cat.slug= sluggify(name);
+        cat.slug= sluggify(catRoot.name);
          // Champ permettant de définir le rang d'une catégorie.
         // Elle permettra de faire remonter les attractions de cette catégorie par rapport à d'autres
         cat.rank =hoaxer.random.arrayElement(rank);
@@ -47,7 +48,8 @@ function generateCategories () {
             increment+=1
             categories.push(child);
         });
-    })
+    });
+    return categories;
 }
 module.exports = generateCategories()
 function sluggify(str) {

@@ -8,7 +8,7 @@ function generateDiscounts () {
     for (let id = 1; id <= 200; id+=1) {
         let discount={};
         discount.id=id;
-        discount.name=generateRandomWord(15);
+        discount.name=generateRandomWord(10);
         discount.code=generateRandomWord(6);
         discount.description=hoaxer.lorem.text();
         discount.start_date=hoaxer.date.between('2020-01-01', '2023-05-05');

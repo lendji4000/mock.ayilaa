@@ -8,7 +8,7 @@ function generateGifts () {
     for (let id = 1; id <= 200; id+=1) {
         let gift={};
         gift.id=id;
-        gift.name=generateRandomWord(15);
+        gift.name=generateRandomWord(10);
         gift.code=generateRandomWord(6);
         gift.description=hoaxer.lorem.text();
         gift.start_date=hoaxer.date.between('2020-01-01', '2023-05-05');

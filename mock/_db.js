@@ -7,14 +7,14 @@ const attractionsCategories = require("./attractions/attractionsCategories");
 const attractionsServices = require("./attractions/attractionServices");
 const attractionsProducts = require("./attractions/attractionProducts");
 const attractionsBookings = require("./attractions/attractionBooking");
-const countries = require("./attractions/countries");
+ const countries = require("./attractions/countries");
 const favorites = require("./attractions/favorites");
 const locations = require("./attractions/locations");
 const locationsCategories = require("./attractions/locationsCategories");
 const reviews = require("./attractions/reviews");
 const visits = require("./attractions/visits");
 const categories = require("./categories/categories");
-const adresses = require("./adresses/adresses");
+ const adresses = require("./adresses/adresses");
 const subscriptionPlans = require("./subscriptions/subscriptionPlan");
 const subscriptions = require("./subscriptions/subscription");
 const discounts = require("./giftAndDiscounts/discount");
@@ -26,7 +26,7 @@ module.exports = () => ({
     attractions,
     attractionsCategories,
     attractionsServices,
-    countries,
+     countries,
     favorites,
     locations,
     locationsCategories,

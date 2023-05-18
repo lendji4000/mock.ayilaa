@@ -10,7 +10,7 @@ function generateSubscriptionPlan () {
     let i=0;
     planNames.forEach((item)=>   {
         let plan={};
-        plan.id=id;
+        plan.id=i;
         plan.name= item;
         plan.code=  planCodes[i];
         plan.description=hoaxer.lorem.text();
