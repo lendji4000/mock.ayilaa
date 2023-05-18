@@ -4,6 +4,7 @@ const users = require("./users/users");
 const employees = require("./users/employee");
 const attractions = require("./attractions/attractions");
 const attractionsCategories = require("./attractions/attractionsCategories");
+const attractionsServices = require("./attractions/attractionServices");
 const attractionsProducts = require("./attractions/attractionProducts");
 const attractionsBookings = require("./attractions/attractionBooking");
 const countries = require("./attractions/countries");
@@ -16,13 +17,15 @@ const categories = require("./categories/categories");
 const adresses = require("./adresses/adresses");
 const subscriptionPlans = require("./subscriptions/subscriptionPlan");
 const subscriptions = require("./subscriptions/subscription");
+const discounts = require("./giftAndDiscounts/discount");
+const gifts = require("./giftAndDiscounts/gift");
 module.exports = () => ({
-    users,
-    employees,
-    attractions,
-    attractionsCategories,
+    adresses,
     attractionsBookings,
     attractionsProducts,
+    attractions,
+    attractionsCategories,
+    attractionsServices,
     countries,
     favorites,
     locations,
@@ -30,9 +33,12 @@ module.exports = () => ({
     reviews,
     visits,
     categories,
-    adresses,
+    discounts,
+    gifts,
+    subscriptions,
     subscriptionPlans,
-    subscriptions
+    employees,
+    users,
 });
 
 /**

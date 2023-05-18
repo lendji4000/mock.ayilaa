@@ -37,7 +37,9 @@ function generateAttractions () {
         const locationId = hoaxer.random.arrayElement(locations).id;
         const logo = hoaxer.internet.url()
         const description = hoaxer.lorem.text()
-        const additionnalData = {}
+        const additionnalData = {
+            tempDAttenteMoyen: "1 heure"
+        }
         const images = generateRandomImageLinks(5)
         const categoriesTabs = randomCategories
         const email = hoaxer.internet.email()
@@ -87,7 +89,7 @@ function generateAttractions () {
             remboursement: "",
             active: hoaxer.random.arrayElement(booleanTabs),
             certification_start_date: hoaxer.date.between('2020-01-01', '2023-05-05'),
-            certification_end_date:  hoaxer.date.between('2020-01-01', '2023-05-05'),
+            certification_end_date:  hoaxer.date.between('2023-05-05', '2026-05-05'),
             is_certify:hoaxer.random.arrayElement(booleanTabs)
         })
 

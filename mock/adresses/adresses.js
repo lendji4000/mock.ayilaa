@@ -17,8 +17,9 @@ function generateAddresses () {
         adr.countryId=randomCountryId;
         adr.state="";
         adr.zip="";
-        adr.adr_line1=hoaxer.lorem.text()
-        adr.adr_line2=hoaxer.lorem.text()
+        adr.neighborhood=generateRandomWord(15);  // Quartier
+        adr.adr_line1=generateRandomWord(15)
+        adr.adr_line2=generateRandomWord(15)
         adr.latitude=city.latitude
         adr.longitude=city.longitude
         adr.gps_location=""
@@ -28,39 +29,3 @@ function generateAddresses () {
     return adresses;
 }
 module.exports = generateAddresses()
-/*
-module.exports=[
-    {
-        id: 1,
-        adr_line1: "2 bd de la paix",
-        adr_line2: "lieu dit manguier",
-        gps_location: "",
-        latitude:"",
-        longitude:"",
-        zip: 48000,
-        city:"Douala",
-        state:"Littoral",
-        country: "Cameroon"
-    },
-    {
-        id: 1,
-        adr_line1: "3 rue du templier",
-        adr_line2: "lieu dit poste centrale",
-        gps_location: "",
-        zip: 33000,
-        city:"Yaoundé",
-        state:"Centre",
-        country: "Cameroon"
-    },
-    {
-        id: 1,
-        adr_line1: "2 bd de la tronch",
-        adr_line2: "quartier tino",
-        gps_location: "",
-        zip: 28000,
-        city:"Bamenda",
-        state:"Nord Ouest",
-        country: "Cameroon"
-    },
-]
-*/

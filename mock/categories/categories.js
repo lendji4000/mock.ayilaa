@@ -17,144 +17,39 @@ const catRoots=[
     {name:'Secours',children:catLevel7},
     {name:'Administration',children:catLevel8}
     ];
-
+const rank =[0,0.5,1,1.5,2,2.5,3,3.5,4,4.5,5];
 function generateCategories () {
     const categories = []
     let increment=1;
     catRoots.forEach((catRoot)=>{
         const cat={};
+        cat.id=increment;
         cat.name=catRoot.name;
-        cat.description="";
-        cat.additionnalData="";
+        cat.description=hoaxer.lorem.text();;
+        cat.additionnalData={};
         cat.slug= sluggify(name);
+         // Champ permettant de définir le rang d'une catégorie.
+        // Elle permettra de faire remonter les attractions de cette catégorie par rapport à d'autres
+        cat.rank =hoaxer.random.arrayElement(rank);
         cat.parentId="";
+        increment+=1;
+        categories.push(cat);
+        catRoot.children.forEach((child) => {
+            child.id=increment;
+            child.name=child;
+            child.description=hoaxer.lorem.text();
+            child.additionnalData={};
+            child.slug= sluggify(child);
+            // Champ permettant de définir le rang d'une catégorie.
+            // Elle permettra de faire remonter les attractions de cette catégorie par rapport à d'autres
+            child.rank =hoaxer.random.arrayElement(rank);
+            child.parentId=cat.id;
+            increment+=1
+            categories.push(child);
+        });
     })
 }
-module.exports=[
-    {
-        id: 1,
-        name: "Restauration",
-        description:'',
-        additionnalData:{},
-        slug: "",
-        parent: "",
-    },
-    {
-        id: 2,
-        name: "Hotels & Hébergements",
-        slug: "hotels-hebergements",
-        parent: "",
-    },
-    {
-        id: 3,
-        name: "Divertissements",
-        slug: "",
-        parent: "",
-    },
-    {
-        id: 4,
-        name: "Transport",
-        slug: "",
-        parent: "",
-    },
-    {
-        id: 5,
-        name: "Sites touristiques",
-        slug: "sites-touristiques",
-        parent: "",
-    },
-    {
-        id: 6,
-        name: "Secours",
-        slug: "",
-        parent: "",
-    },
-    {
-        id: 7,
-        name: "Urgences",
-        slug: "",
-        parent: 6,
-    },
-    {
-        id: 8,
-        name: "Pompiers",
-        slug: "",
-        parent: 6,
-    },
-    {
-        id: 9,
-        name: "Hôpital",
-        slug: "",
-        parent: 6,
-    },
-    {
-        id: 10,
-        name: "Centre de Santé",
-        slug: "",
-        parent: 6,
-    },
-    {
-        id: 11,
-        name: "Police-Gendarmerie",
-        slug: "",
-        parent: 6,
-    },
-    {
-        id: 12,
-        name: "Administration",
-        slug: "",
-        parent: "",
-    },
-    {
-        id: 13,
-        name: "Ministère",
-        slug: "",
-        parent: 12,
-    },
-    {
-        id: 14,
-        name: "Délégations",
-        slug: "",
-        parent: 12,
-    },
-    {
-        id: 15,
-        name: "Mairie",
-        slug: "",
-        parent: 12,
-    },
-    {
-        id: 16,
-        name: "Services",
-        slug: "",
-        parent: 12,
-    },
-    {
-        id: 17,
-        name: "Université",
-        slug: "",
-        parent: 12,
-    },
-    {
-        id: 18,
-        name: "Etablissement Scolaires",
-        slug: "",
-        parent: 12,
-    },
-    {
-        id: 19,
-        name: "Manèges",
-        slug: "",
-        parent: 3,
-    },
-    {
-        id: 20,
-        name: "Musée",
-        slug: "",
-        parent: 5,
-    },
-]
-
+module.exports = generateCategories()
 function sluggify(str) {
     return str
         .toLowerCase() // Convert to lowercase

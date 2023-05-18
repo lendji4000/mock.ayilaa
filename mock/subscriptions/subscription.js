@@ -7,7 +7,7 @@ function generateSubscriptions () {
     for (let id = 1; id <= 10; id+=1) {
         let subscription={};
         subscription.id=id;
-        subscription.planId= hoaxer.datatype.number({ min: 1, max: 10 });
+        subscription.planId= hoaxer.datatype.number({ min: 1, max: 6 });
         subscription.userId=hoaxer.datatype.number({ min: 1, max: 499 })
         subscription.attractionId=hoaxer.datatype.number({ min: 1, max: 499 });
         subscription.status=hoaxer.random.arrayElement(statusTab);
