@@ -1,5 +1,6 @@
 // Table de gestion des cartes cadeaux
 const hoaxer = require('hoaxer')
+const { generateRandomWord, generateRandomImageLinks, getRandomSubarray } = require('../globalFunctions');
 function generateGifts () {
     const gifts = []
     const statusTab = ["Active", "Expired","OutOfStock"];

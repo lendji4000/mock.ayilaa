@@ -1,4 +1,5 @@
 // Table de gestion des réduction
+const { generateRandomWord, generateRandomImageLinks, getRandomSubarray } = require('../globalFunctions');
 const hoaxer = require('hoaxer')
 const booleans = [true,false];
 function generateDiscounts () {

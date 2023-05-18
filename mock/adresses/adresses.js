@@ -3,6 +3,7 @@ const hoaxer = require('hoaxer')
 const csc = require('country-state-city')
 const countries = require("../attractions/countries");
 const restrictCountriesId = [42, 82, 54, 199, 107, 70];
+const { generateRandomWord, generateRandomImageLinks, getRandomSubarray } = require('../globalFunctions');
 function generateAddresses () {
     const adresses = []
     for (let id = 1; id <= 200; id+=1) {
