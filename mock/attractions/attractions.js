@@ -16,7 +16,7 @@ function generateAttractions () {
     const whereToPays =["Ayilaa","attraction"]
     const paymentModes =["partial","total"];
     const rates =[0,0.5,1,1.5,2,2.5,3,3.5,4,4.5,5];
-
+    const rank =[0,0.5,1,1.5,2,2.5,3,3.5,4,4.5,5,5.5,6,6.5,7,7.5,8,8.5,9,9.5,10];
     const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // The input array
     const subarraySize = 4; // The desired size of the random subarray
 
@@ -32,6 +32,7 @@ function generateAttractions () {
 
         const name = generateRandomWord(6)
         const rate = hoaxer.random.arrayElement(rates)
+        const rank = hoaxer.random.arrayElement(rank)
         const addressId = hoaxer.random.arrayElement(addresses).id;
         const locationId = hoaxer.random.arrayElement(locations).id;
         const logo = hoaxer.internet.url()
@@ -63,6 +64,7 @@ function generateAttractions () {
             locationId:locationId,
             name:name,
             rate:rate,
+            rank:rank,
             logo:logo,
             description:description,
             additionnalData:additionnalData,
