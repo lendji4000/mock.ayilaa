@@ -1,64 +1,84 @@
-
-const hoaxer = require('hoaxer')
+const hoaxer = require("hoaxer");
 const addresses = require("../adresses/adresses");
-function generateEmployees () {
-    const employees = []
-    for (let id = 1; id <= 500; id+=1) {
-        const firstName = hoaxer.name.firstName()
-        const lastName = hoaxer.name.lastName()
-        const email = hoaxer.internet.email()
-        const phone1=hoaxer.phone.phoneNumberFormat(1, '{{countryCode}}-###-###-####', 'CM');
-        const phone2=hoaxer.phone.phoneNumberFormat(1, '{{countryCode}}-###-###-####', 'CM');
+function generateEmployees() {
+  const employees = [];
+  for (let id = 1; id <= 500; id += 1) {
+    const firstName = hoaxer.name.firstName();
+    const lastName = hoaxer.name.lastName();
+    const email = hoaxer.internet.email();
+    const phone1 = hoaxer.phone.phoneNumberFormat(
+      1,
+      "{{countryCode}}-###-###-####",
+      "CM"
+    );
+    const phone2 = hoaxer.phone.phoneNumberFormat(
+      1,
+      "{{countryCode}}-###-###-####",
+      "CM"
+    );
 
-        const genders = ['Male', 'Female', 'Non-binary', 'Genderqueer', 'Agender', 'Bigender'];
-        const gender = hoaxer.random.arrayElement(genders); // sélectionne un genre aléatoire dans le tableau "genders"
+    const genders = [
+      "Male",
+      "Female",
+      "Non-binary",
+      "Genderqueer",
+      "Agender",
+      "Bigender",
+    ];
+    const gender = hoaxer.random.arrayElement(genders); // sélectionne un genre aléatoire dans le tableau "genders"
 
+    const startDate = new Date("1940-01-01");
+    const endDate = new Date("2003-12-31");
+    const randomBirthDate = hoaxer.date.between(startDate, endDate);
 
-        const startDate = new Date('1940-01-01');
-        const endDate = new Date('2003-12-31');
-        const randomBirthDate = hoaxer.date.between(startDate, endDate);
+    //console.log(randomBirthDate.toLocaleDateString()); // affiche la date de naissance aléatoire sous forme de chaîne de caractères dans le format "mm/jj/aaaa"
+    //hoaxer.locale="fr_CM";
+    //console.log(hoaxer.address)
+    const date_of_birth = randomBirthDate.toLocaleDateString();
+    const adresseId = hoaxer.random.arrayElement(addresses).id;
+    const verifieds = [true, false];
+    const verified = hoaxer.random.arrayElement(verifieds);
 
-        //console.log(randomBirthDate.toLocaleDateString()); // affiche la date de naissance aléatoire sous forme de chaîne de caractères dans le format "mm/jj/aaaa"
-        //hoaxer.locale="fr_CM";
-        //console.log(hoaxer.address)
-        const date_of_birth=randomBirthDate.toLocaleDateString();
-        const adresseId=hoaxer.random.arrayElement(addresses).id;
-        const verifieds = [true ,false ];
-        const verified = hoaxer.random.arrayElement(verifieds);
-        const verified_at="";
-        const actives = [true ,false ];
-        const active = hoaxer.random.arrayElement(actives);
-        const activated_at="";
-        const current_gps_location="";
-        const password =hoaxer.internet.password(12);
-        const countries = ['Cameroon', 'Gabon', 'Congo', 'Senegal', 'Côte d\'Ivoire', 'Guinée Equatoriale'];
-        const roles = ['Global Admin', 'Country Admin', 'Partner'];
-        const country = hoaxer.random.arrayElement(countries); // sélectionne un genre aléatoire dans le tableau "Countries"
-        const role=hoaxer.random.arrayElement(roles);
-        employees.push({
-            id: id,
-            first_name: firstName,
-            last_name: lastName,
-            email: email,
-            phone1: phone1,
-            phone2: phone2,
-            gender: gender,
-            date_of_birth: date_of_birth,
-            adresseId: adresseId,
-            role: role,
-            verified: verified,
-            verified_at: verified_at,
-            active: active,
-            activated_at: activated_at,
-            password: password,
-            current_gps_location:current_gps_location,
-        })
-    }
-    return employees
+    const verified_at = hoaxer.date.past().toLocaleDateString();
+    const actives = [true, false];
+    const active = hoaxer.random.arrayElement(actives);
+    const activated_at = hoaxer.date.past().toLocaleDateString();
+    const current_gps_location = hoaxer.address.nearbyGPSCoordinate();
+    const password = hoaxer.internet.password(12);
+    const countries = [
+      "Cameroon",
+      "Gabon",
+      "Congo",
+      "Senegal",
+      "Côte d'Ivoire",
+      "Guinée Equatoriale",
+    ];
+    const roles = ["Global Admin", "Country Admin", "Partner"];
+    const country = hoaxer.random.arrayElement(countries); // sélectionne un genre aléatoire dans le tableau "Countries"
+    const role = hoaxer.random.arrayElement(roles);
+
+    employees.push({
+      id: id,
+      first_name: firstName,
+      last_name: lastName,
+      email: email,
+      phone1: phone1,
+      phone2: phone2,
+      gender: gender,
+      date_of_birth: date_of_birth,
+      adresseId: adresseId,
+      role: role,
+      verified: verified,
+      verified_at: verified_at,
+      active: active,
+      activated_at: activated_at,
+      password: password,
+      current_gps_location: current_gps_location,
+    });
+  }
+  return employees;
 }
-module.exports = generateEmployees()
-
-
+module.exports = generateEmployees();
 
 /*
 
