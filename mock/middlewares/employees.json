@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "john.doe@example.com",
+    "phone1": "1234567890",
+    "phone2": "9876543210",
+    "gender": "Male",
+    "date_of_birth": "1990-01-01",
+    "adresseId": 1,
+    "role": "Global Admin",
+    "verified": false,
+    "verified_at": "",
+    "active": false,
+    "activated_at": "",
+    "password": "$2b$10$HawEdlQ6mJYZsF1wlqGQyeCfosePwZax8A8LdCKFpxkjLckYHPmUC",
+    "current_gps_location": "123.456789, -98.765432"
+  }
+]

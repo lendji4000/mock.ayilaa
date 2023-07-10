@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "phone1": "123-456-7890",
+    "phone2": "987-654-3210",
+    "gender": "Male",
+    "dateOfBirth": "1990-01-01",
+    "addressId": 1,
+    "role": "User",
+    "password": "$2b$10$.AnvHf1vqUOcPnTGw/ADyuEFDuMPNTKFrR4Tj7wESxYJbG/.MPdqO",
+    "currentGpsLocation": ""
+  }
+]
